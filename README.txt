@@ -1,23 +1,30 @@
 Ruhani Mumick & Alex Muralles
-02-512 Final project 
 
 KCUTSOLVER.PY AND SUPPORTING SNIPPETS OF CODE
 
-———————— FEATURED FILES ————————
+———————— INPUT FORMAT ———————
 
-finalProjectR.txt - R code using the bioconductor package to process Gene Ontology Data straight from the gene ontology database 
+All files converted to a tabulated format from the NCBI GEO gene ontology database using the bioconductor package in R, sample R-script below: 
 
-———————— FILE OUTPUT TYPE ————————
+library(Biobase)
+library(GEOquery)
+gds6010 <- getGEO("GDS6010")
+write.table(Table(gds6010), file = "gds6010.txt")
 
-tabulated textile in the following format: 
+tabulated textfile in the following format: 
 
 ID_REF IDENTIFIER GSM1626004 GSM1626005 GSM1626006 GSM1625995 GSM1625996 GSM1625997 GSM1626007 GSM1626008 GSM1626009 GSM1625998 GSM1625999 GSM1626000 GSM1626010 GSM1626011 GSM1626012 GSM1626001 GSM1626002 GSM1626003
+
+Currently script only suitable for 18-sample databases, but can (and will) easily be fitted for more
+
+
+———————— FILE OUTPUT TYPE ————————
 
 randomizeSelection.py - Python code to select randomly from the tabulated file input, used for runtime analysis and data selection (no inputs, used in shell)
 
 kCutSolver.py- Main Python Script, used to generate graph and run k-cut solver 
 
-———————— kCutSolver.py Documentation ————————
+———————— USAGE ————————
 
 CALLING: 
 python kCutSolver.py [Processed Microarray Filename (see above for format)] [k] [function Option (1,2)] [Edge Threshold for graph creation] [Cost Threshold (for brute force only)]
