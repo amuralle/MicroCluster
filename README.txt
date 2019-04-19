@@ -4,7 +4,8 @@ KCUTSOLVER.PY AND SUPPORTING SNIPPETS OF CODE
 
 ———————— INPUT FORMAT ———————
 
-All files converted to a tabulated format from the NCBI GEO gene ontology database using the bioconductor package in R, sample R-script below: 
+All files converted to a tabulated format from the NCBI GEO gene ontology database using the bioconductor package in R, 
+sample R-script below: 
 
 library(Biobase)
 library(GEOquery)
@@ -20,14 +21,16 @@ Currently script only suitable for 18-sample databases, but can (and will) easil
 
 ———————— FILE OUTPUT TYPE ————————
 
-randomizeSelection.py - Python code to select randomly from the tabulated file input, used for runtime analysis and data selection (no inputs, used in shell)
+randomizeSelection.py - Python code to select randomly from the tabulated file input, used for runtime analysis and 
+data selection (no inputs, used in shell)
 
 kCutSolver.py- Main Python Script, used to generate graph and run k-cut solver 
 
 ———————— USAGE ————————
 
 CALLING: 
-python kCutSolver.py [Processed Microarray Filename (see above for format)] [k] [function Option (1,2)] [Edge Threshold for graph creation] [Cost Threshold (for brute force only)]
+python kCutSolver.py [Processed Microarray Filename (see above for format)] [k] [function Option (1,2)] [Edge Threshold 
+for graph creation] [Cost Threshold (for brute force only)]
 
 [Processed Microarray Filename (see above for format)] - tabulated text file
 [k]- # of clusters, int
